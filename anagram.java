@@ -8,6 +8,10 @@ public class anagram {
         s2.toLowerCase();
         char a[]=s1.toCharArray();
         char b[]=s2.toCharArray();
+        if(s1.length()!=s2.length()){
+            System.out.println("not anagram");
+            System.exit(0);
+        }
         /*Arrays.sort(a);
         Arrays.sort(b);
         for(int i=0;i<s1.length();i++){
@@ -18,7 +22,8 @@ public class anagram {
 
         }
         System.out.println("anagram");*/
-        HashMap<Character,Integer> hm1=new HashMap<>();
+
+        /*HashMap<Character,Integer> hm1=new HashMap<>();
         HashMap<Character,Integer> hm2=new HashMap<>();
         for(int i=0;i<s1.length();i++){
             hm1.put(a[i],hm1.getOrDefault(a[i],0)+1); 
@@ -28,7 +33,20 @@ public class anagram {
             System.out.println("anagram");
             System.exit(0);
         }
-        System.out.println("not anagram");
+        System.out.println("not anagram");*/
+
+        int arr[]=new int[26];
+        for(int i=0;i<s1.length();i++){
+            arr[a[i-'a']]++;
+            arr[b[i-'a']]--;
+        }
+        for(int i=0;i<s1.length();i++){
+            if(arr[a[i-'a']]!=0){
+                System.out.println("not anagram");
+                System.exit(0);
+            }
+        }
+        System.out.println("anagram");
         sc.close();
     }
 }
