@@ -1,18 +1,19 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class findunique {
     public static void main(String arg[]){
         Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
-        char a[]=new char[n];
-        for(int i=0;i<n;i++){
-            a[i]=sc.next().charAt(0);
+        String s=sc.nextLine();
+        HashSet<Character> hs=new HashSet<>();
+        for(char i:s.toCharArray()){
+            hs.add(i);
         }
-        int ans=0;
-        for(char x:a){
-            ans^=x;
+        if(hs.size()==26){
+            System.out.println("panagram");
         }
-        System.out.println("unique is "+(char)ans);
+        else{
+            System.out.println(" not panagram");
+        }
         sc.close();
     }
 }
