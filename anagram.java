@@ -35,7 +35,7 @@ public class anagram {
         }
         System.out.println("not anagram");*/
 
-        int arr[]=new int[26];
+        /*int arr[]=new int[26];
         for(int i=0;i<s1.length();i++){
             arr[a[i-'a']]++;
             arr[b[i-'a']]--;
@@ -46,7 +46,18 @@ public class anagram {
                 System.exit(0);
             }
         }
-        System.out.println("anagram");
+        System.out.println("anagram");*/
+        int ans=0;
+        for(int i=0;i<s1.length();i++){
+            ans^=a[i];
+            ans^=b[i];
+        }
+        if(ans==0){
+            System.out.println("anagram");
+        }
+        else{
+            System.out.println("not anagram");
+        }
         sc.close();
     }
 }
