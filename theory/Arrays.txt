@@ -1,0 +1,28 @@
+ARRAYS (in java.util.Arrays):
+int a[]=new int[n];
+
+METHODS:
+
+array.length //return length of array,it is a feild not a method
+
+Arrays.sort(array)                     // sort array in ascending order
+Arrays.sort(array, from, to)           // sort subarray
+Arrays.sort(array, Comparator)         // sort with custom comparator (objects)
+
+Arrays.binarySearch(array, key)        // search element (sorted array only)
+Arrays.binarySearch(array, from, to, key) // search in subarray
+
+Arrays.copyOf(array, newLength)        // copy array to new length
+Arrays.copyOfRange(array, from, to)    // copy specific range
+
+Arrays.fill(array, val)                // fill entire array with value
+Arrays.fill(array, from, to, val)      // fill range with value
+
+Arrays.equals(arr1, arr2)              // compare if arrays are equal
+Arrays.deepEquals(arr1, arr2)          // compare nested arrays
+
+Arrays.toString(array)                 // string representation of 1D array
+Arrays.deepToString(array)             // string representation of nested array
+
+Arrays.asList(T... a)                  // convert array to fixed-size List
+Arrays.stream(array)                   // create stream from array
