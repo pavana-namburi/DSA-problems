@@ -1,0 +1,84 @@
+String (Immutable)
+String s = "Hello";
+String s2 = new String("Hello");
+
+METHODS:
+
+s.length()                      // returns length
+s.charAt(int index)             // char at index
+s.equals(String another)        // compare content (case-sensitive)
+s.equalsIgnoreCase(String another) // compare ignoring case
+s.compareTo(String another)     // lexicographic compare
+s.compareToIgnoreCase(String another) // compare ignoring case
+s.contains(CharSequence cs)     // check if substring exists
+s.startsWith(String prefix)     // true if starts with prefix
+s.endsWith(String suffix)       // true if ends with suffix
+s.isEmpty()                     // true if string is empty
+s.concat(String str)            // join strings (new object)
+s.replace(char old, char new)   // replace characters
+s.replace(CharSeq old, CharSeq new) // replace substring
+s.replaceAll(regex, replacement) // replace using regex
+s.toLowerCase()                 // convert to lowercase
+s.toUpperCase()                 // convert to uppercase
+s.trim()                        // remove spaces at ends
+s.strip()                       // remove Unicode spaces (Java 11+)
+s.indexOf(char/str)             // first occurrence index
+s.indexOf(char/str, fromIndex)  // index from given position
+s.lastIndexOf(char/str)         // last occurrence index
+s.substring(int begin)          // substring from index
+s.substring(int begin, int end) // substring between indices
+s.split(String regex)           // split into array
+String.valueOf(anyType)         // convert to string
+s.toCharArray()                 // string to char array
+
+******************************************************************************
+
+STRINGBUILDER (Mutable, Not Thread-Safe):
+StringBuilder sb = new StringBuilder("Hello");
+
+METHODS:
+
+sb.append(String str)              // add at end
+sb.insert(int offset, String str)  // insert at position
+sb.replace(int start, int end, String str) // replace in range
+sb.delete(int start, int end)      // delete substring
+sb.deleteCharAt(int index)         // delete one char
+sb.reverse()                       // reverse content
+sb.charAt(int index)               // char at index
+sb.length()                        // current length
+sb.capacity()                      // current capacity
+sb.setCharAt(int index, char ch)   // set char at index
+sb.setLength(int newLength)        // set/truncate length
+sb.substring(int start)            // substring from index
+sb.substring(int start, int end)   // substring between indices
+sb.indexOf(String str)             // first occurrence index
+sb.indexOf(String str, int from)   // occurrence from position
+sb.lastIndexOf(String str)         // last occurrence index
+sb.ensureCapacity(int minCapacity) // ensure minimum capacity
+
+******************************************************************************
+
+STRINGBUFFER (Mutable, Thread-Safe):
+StringBuffer sbf = new StringBuffer("Hello");
+
+METHODS:
+
+sbf.append(String str)              // add at end
+sbf.insert(int offset, String str)  // insert at position
+sbf.replace(int start, int end, String str) // replace in range
+sbf.delete(int start, int end)      // delete substring
+sbf.deleteCharAt(int index)         // delete one char
+sbf.reverse()                       // reverse content
+sbf.charAt(int index)               // char at index
+sbf.length()                        // current length
+sbf.capacity()                      // current capacity
+sbf.setCharAt(int index, char ch)   // set char at index
+sbf.setLength(int newLength)        // set/truncate length
+sbf.substring(int start)            // substring from index
+sbf.substring(int start, int end)   // substring between indices
+sbf.indexOf(String str)             // first occurrence index
+sbf.indexOf(String str, int from)   // occurrence from position
+sbf.lastIndexOf(String str)         // last occurrence index
+sbf.ensureCapacity(int minCapacity) // ensure minimum capacity
+
+
