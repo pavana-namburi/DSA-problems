@@ -1,3 +1,4 @@
+package algorithms;
 import java.util.*;
 public class MergeTwoArrays {
     public static void main(String arg[]){
