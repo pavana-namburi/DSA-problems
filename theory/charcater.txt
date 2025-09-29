@@ -1,0 +1,33 @@
+CHARACTER CLASS (java.lang.Character)
+
+//Methods:
+
+Character.isLetter(ch)              // true if letter (A-Z, a-z, Unicode letters)
+Character.isDigit(ch)               // true if digit (0-9)
+Character.isLetterOrDigit(ch)       // true if letter or digit
+Character.isWhitespace(ch)          // true if whitespace (space, tab, etc.)
+Character.isUpperCase(ch)           // true if uppercase letter
+Character.isLowerCase(ch)           // true if lowercase letter
+
+Character.toUpperCase(ch)           // convert to uppercase
+Character.toLowerCase(ch)           // convert to lowercase
+Character.toTitleCase(ch)           // convert to titlecase (for special scripts)
+
+Character.isAlphabetic(ch)          // true if alphabetic (Unicode standard)
+Character.isSpaceChar(ch)           // true if space char (only space category in Unicode)
+Character.isISOControl(ch)          // true if ISO control character
+Character.isDefined(ch)             // true if defined Unicode character
+
+Character.getNumericValue(ch)       // numeric value (e.g. '7'→7, 'A'→10, 'Ⅻ'→12)
+Character.forDigit(int digit, int radix) // digit to char in given base (e.g. 10, 16)
+
+// ===== Unicode / CodePoint methods =====
+
+Character.charCount(int codePoint)  // returns 1 if codePoint < 0xFFFF, else 2 
+                                    // (some Unicode symbols need 2 chars in UTF-16)
+
+Character.isSurrogate(ch)           // true if char is a surrogate 
+                                    // (part of a pair used for Unicode > 0xFFFF)
+
+Character.toChars(int codePoint)    // converts a Unicode codePoint into char[]
+                                    // (1-char array if fits in char, 2-char array if needs surrogate pair)
