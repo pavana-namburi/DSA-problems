@@ -1,6 +1,5 @@
-package algorithms;
 import java.util.*;
-public class MergeTwoArrays {
+public class mergeTwoArrays {
     public static void main(String arg[]){
         Scanner sc=new Scanner(System.in);
         int n1=sc.nextInt();

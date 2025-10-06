@@ -1,6 +1,5 @@
-package algorithms;
 import  java.util.*;
-public class TwoPointer {
+public class twoPointer {
     public static void main(String arg[]){
        Scanner sc=new Scanner(System.in);
        int n=sc.nextInt();
