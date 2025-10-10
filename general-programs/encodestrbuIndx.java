@@ -6,7 +6,7 @@ public class encodestrbuIndx {
         System.out.println("Enter string:");
         String s=sc.next();
         int r=sc.nextInt();
-        String res= encode(s,r);
+        String res=encode(s,r);
         for(int i=0;i<res.length();i++){
             System.out.print(res.charAt(i));
         }

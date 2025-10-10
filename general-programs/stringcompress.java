@@ -10,6 +10,7 @@ public class stringcompress {
         }
         sc.close();
     }
+
     public static String encode(String s) {
         StringBuilder sb=new StringBuilder();
         sb.append(s.charAt(0));
