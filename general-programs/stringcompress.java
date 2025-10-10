@@ -19,11 +19,11 @@ public class stringcompress {
                 c++;
             }
             else{
-                sb.append(Integer.toHexString(c));
+                sb.append(Integer.toHexString(c)); //Integer.toOcatalString(c)
                 sb.append(s.charAt(i)); 
                 c=1;
             }
         }
-        return  sb.append(Integer.toHexString(c)).toString();
+        return  sb.append(Integer.toHexString(c)).toString();  //Integer.toOcatalString(c)
     }
 }
