@@ -11,7 +11,7 @@ public class BSearchRotatedArray {
             if (arr[left] <= arr[mid]) { 
                 left = mid + 1; 
             } else { 
-                right = mid - 1;
+                right = mid;
             }
         }
         return arr[left]; 
