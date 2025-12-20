@@ -13,12 +13,12 @@ public class fixedSlidingWindow {
         }
         return res;
     }*/
-    public static int[] slide(int a[],int k,int n){
-        int res[]=new int[n-k+1];
+    public static double[] slide(int a[],int k,int n){
+        double res[]=new double[n-k+1];
         int s=0;
         for(int i=0;i<k;i++)
             s+=a[i];
-        res[0]=s;
+        res[0]=(double)s/k;
         /*for(int j=1;j<=n-k;j++){
             s+=a[j+k-1];
             s-=a[j-1];
@@ -27,7 +27,7 @@ public class fixedSlidingWindow {
         for(int j=k;j<n;j++){
             s+=a[j];
             s-=a[j-k];
-            res[j-k+1]=s;
+            res[j-k+1]=(double)s/k;
         }
         return res;
     }
@@ -42,8 +42,8 @@ public class fixedSlidingWindow {
         }
         System.out.println("Enter k value:");
         int k = sc.nextInt();
-        int ans[]=slide(arr,k,n);
-        for(int x:ans)
+        double ans[]=slide(arr,k,n);
+        for(double x:ans)
             System.out.print(x+" ");
         sc.close();
     }
