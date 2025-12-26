@@ -12,20 +12,34 @@ public class returnmininSub {
         }
         System.out.println("Enter k value:");
         int k = sc.nextInt();
-        int ans[]=slide(arr,k,n);
-        for(int x:ans)
-            System.out.print(x+" ");
+        slide(arr,k,n);
         sc.close();
     }
-    public static int[] slide(int a[],int k,int n){
-        int res[]=new int[n-k+1];
+    public static void slide(int a[],int k,int n){
+        int resMIN[]=new int[n-k+1];
+        int resMAX[]=new int[n-k+1];
+        int gmin=Integer.MAX_VALUE,gmax=Integer.MIN_VALUE;
         for(int i=0;i<=n-k;i++){
-            HashSet<Integer> hs=new HashSet<>();
+            int min=Integer.MAX_VALUE;
+            int max=Integer.MIN_VALUE;
             for(int j=i;j<i+k;j++){
-                hs.add(a[j]);
+                min=Math.min(min,a[j]);
+                max=Math.max(max,a[j]);
             }
-            res[i]=hs.size();
+            resMIN[i]=min;
+            resMAX[i]=max;
+            gmin=Math.min(min,gmin);
+            gmax=Math.max(max,gmax);
         }
-        return res;
+        System.out.print("Minimun element of subarrays: ");
+        for(int x:resMIN)
+            System.out.print(x+" ");
+        System.out.println();
+        System.out.println("min of minarray is "+gmin);
+        System.out.print("Maximun element of subarrays: ");
+        for(int x:resMAX)
+            System.out.print(x+" ");
+        System.out.println();
+        System.out.println("max of maxarray is "+gmax);
     }
 }
