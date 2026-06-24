@@ -20,16 +20,53 @@ class representation {
             System.out.println();
         }
     }
-} 
 
-public class Mat2dRep{
+    public ArrayList<Integer> dfs(int s,boolean vis[]){
+        ArrayList<Integer> al=new ArrayList<>();
+        Stack<Integer> st=new Stack<>();
+        st.push(s);
+        while(!st.isEmpty()){
+            int u=st.pop();
+            if(!vis[u]){
+                vis[u]=true;
+                al.add(u);
+                for(int i=n-1;i>=0;i--){
+                    if(mat[u][i]==1 && !vis[i]){
+                        st.push(i);
+                    }
+                }
+            }
+        }
+        return al;
+    }
+
+    public void traverse(){
+        Scanner sc=new Scanner(System.in);
+        while(true){
+            System.out.println("1:dfs 2.exit");
+            System.out.println("Enter your choice: ");
+            int s=sc.nextInt();
+            switch(s){
+                case 1:     boolean vis[]=new boolean[n];
+                            ArrayList<Integer> al=dfs(s,vis);
+                            System.out.println(al);
+                            break;
+                case 2:sc.close();
+                    System.exit(0);
+            }
+        }
+    }
+
+}
+
+public class MatRep{
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter the number of vertices:");
         int n = sc.nextInt();
         representation g = new representation(n);
         while(true){
-            System.out.println("1. Add Edge 2. Print Graph 3. Exit");
+            System.out.println("1. Add Edge 2. Print Graph 3. Exit 4.traverse");
             System.out.println("Enter your choice: ");
             int ch= sc.nextInt();
             switch(ch){
@@ -44,6 +81,7 @@ public class Mat2dRep{
                     break;
                 case 3:sc.close();
                     System.exit(0);
+                case 4:g.traverse();
             }
         }
     }
