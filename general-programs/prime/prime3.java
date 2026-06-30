@@ -31,6 +31,5 @@ public class prime3 {
         else{
             return true;
         }
-        
     }
 }
